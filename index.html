@@ -1,0 +1,795 @@
+```html
+<!DOCTYPE html>
+
+<!-- Tell the browser this document uses modern HTML5 -->
+<html lang="en">
+
+<head>
+
+  <!-- Set the character encoding so text displays correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Make the website responsive on phones, tablets, and computers -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- The title that appears in the browser tab -->
+  <title>Kyerman by Koba | Tailored to Suit You</title>
+
+
+  <!-- ========================================================= -->
+  <!-- ======================== CSS ============================= -->
+  <!-- ========================================================= -->
+
+  <style>
+
+    /* --------------------------------------------------------- */
+    /* GLOBAL RESET                                               */
+    /* --------------------------------------------------------- */
+
+    /* Remove default browser spacing and make sizing predictable */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* BODY                                                       */
+    /* --------------------------------------------------------- */
+
+    /* Set the overall website background, text color, and spacing */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f5f0;
+      color: #151515;
+      line-height: 1.6;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* NAVIGATION                                                  */
+    /* --------------------------------------------------------- */
+
+    /* Create the navigation bar at the top of the website */
+    nav {
+      display: flex;
+
+      /* Put the logo on the left and links on the right */
+      justify-content: space-between;
+
+      /* Vertically center everything */
+      align-items: center;
+
+      /* Add space inside the navigation bar */
+      padding: 24px 6%;
+
+      /* Add a subtle line underneath the navigation */
+      border-bottom: 1px solid #ddd8ce;
+
+      /* Match the main website background */
+      background: #f7f5f0;
+    }
+
+
+    /* Style the Kyerman logo text */
+    .logo {
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+
+
+    /* Style the navigation links */
+    nav a {
+      color: #151515;
+      text-decoration: none;
+      margin-left: 28px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* HERO SECTION                                                */
+    /* --------------------------------------------------------- */
+
+    /* Create the large opening section of the website */
+    .hero {
+      min-height: 85vh;
+
+      /* Center the hero content vertically */
+      display: flex;
+      align-items: center;
+
+      /* Center the hero content horizontally */
+      justify-content: center;
+
+      /* Center the text */
+      text-align: center;
+
+      /* Add breathing room around the content */
+      padding: 80px 6%;
+
+      /* Warm neutral background */
+      background: #eee9df;
+    }
+
+
+    /* Small uppercase text above the main headline */
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      /* Muted gold accent */
+      color: #a8874d;
+    }
+
+
+    /* Main homepage headline */
+    h1 {
+      font-size: clamp(55px, 9vw, 110px);
+
+      /* Keep the headline elegant rather than bold */
+      font-weight: 400;
+
+      /* Tighten the spacing between headline lines */
+      line-height: .9;
+
+      /* Add space above and below the headline */
+      margin: 25px 0;
+    }
+
+
+    /* Supporting text underneath the hero headline */
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 35px;
+      color: #555;
+      font-size: 18px;
+    }
+
+
+    /* Main call-to-action buttons */
+    .button {
+      display: inline-block;
+
+      /* Dark luxury-style button */
+      padding: 15px 28px;
+      background: #151515;
+      color: white;
+
+      /* Remove the default link underline */
+      text-decoration: none;
+
+      /* Use a clean sans-serif font for buttons */
+      font-family: Arial, sans-serif;
+
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* GENERAL SECTIONS                                            */
+    /* --------------------------------------------------------- */
+
+    /* Give each major website section consistent spacing */
+    section {
+      padding: 100px 7%;
+
+      /* Prevent text from becoming too wide */
+      max-width: 1200px;
+
+      /* Center the section */
+      margin: auto;
+    }
+
+
+    /* Utility class for centered text */
+    .center {
+      text-align: center;
+    }
+
+
+    /* Section headings */
+    h2 {
+      font-size: 44px;
+      font-weight: 400;
+      margin: 15px 0 25px;
+    }
+
+
+    /* Supporting paragraph used in the introduction section */
+    .intro-text {
+      max-width: 720px;
+      margin: auto;
+      color: #666;
+      font-size: 17px;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* INTRODUCTION CARDS                                          */
+    /* --------------------------------------------------------- */
+
+    /* Create three columns for the Fit, Fabric, and Details cards */
+    .cards {
+      display: grid;
+
+      /* Three equal-width columns */
+      grid-template-columns: repeat(3, 1fr);
+
+      /* Space between the cards */
+      gap: 20px;
+
+      /* Space between the paragraph and cards */
+      margin-top: 55px;
+    }
+
+
+    /* Individual card styling */
+    .card {
+      min-height: 320px;
+
+      /* Put the text near the bottom of the card */
+      padding: 30px;
+      display: flex;
+      align-items: flex-end;
+
+      /* Neutral fabric-inspired color */
+      background: #ded7ca;
+    }
+
+
+    /* Slightly change the background of the second card */
+    .card:nth-child(2) {
+      background: #d3cec3;
+    }
+
+
+    /* Slightly change the background of the third card */
+    .card:nth-child(3) {
+      background: #e8e3da;
+    }
+
+
+    /* Card heading */
+    .card h3 {
+      font-size: 27px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+
+    /* Card description */
+    .card p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #555;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* PROCESS SECTION                                             */
+    /* --------------------------------------------------------- */
+
+    /* Create the dark section containing the four-step process */
+    .process {
+      max-width: none;
+
+      /* Luxury black background */
+      background: #151515;
+
+      /* White text against the dark background */
+      color: white;
+    }
+
+
+    /* Arrange the four process steps horizontally */
+    .steps {
+      max-width: 1200px;
+      margin: 55px auto 0;
+
+      display: grid;
+
+      /* Four equal columns */
+      grid-template-columns: repeat(4, 1fr);
+
+      /* Space between each step */
+      gap: 35px;
+    }
+
+
+    /* Small gold number above each process step */
+    .step-number {
+      color: #b99a5a;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+
+    /* Process step heading */
+    .step h3 {
+      font-size: 23px;
+      font-weight: 400;
+      margin: 12px 0;
+    }
+
+
+    /* Process step description */
+    .step p {
+      color: #bbb;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* CONTACT / INQUIRY SECTION                                   */
+    /* --------------------------------------------------------- */
+
+    /* Create the final call-to-action section */
+    .contact {
+      max-width: none;
+
+      /* Center all contact content */
+      text-align: center;
+
+      /* Use the same warm neutral as the hero */
+      background: #eee9df;
+    }
+
+
+    /* Contact section supporting text */
+    .contact p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* FOOTER                                                      */
+    /* --------------------------------------------------------- */
+
+    /* Create the bottom footer */
+    footer {
+      padding: 30px 7%;
+
+      /* Put copyright on the left and tagline on the right */
+      display: flex;
+      justify-content: space-between;
+
+      /* Small clean footer typography */
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #777;
+    }
+
+
+    /* --------------------------------------------------------- */
+    /* MOBILE RESPONSIVE DESIGN                                    */
+    /* --------------------------------------------------------- */
+
+    /* These styles activate on smaller screens */
+    @media (max-width: 750px) {
+
+      /* Reduce navigation spacing on phones */
+      nav {
+        padding: 20px;
+      }
+
+
+      /* Make navigation links smaller on phones */
+      nav a {
+        margin-left: 12px;
+        font-size: 11px;
+      }
+
+
+      /* Stack the cards vertically instead of horizontally */
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+
+      /* Reduce section spacing on smaller screens */
+      section {
+        padding: 70px 6%;
+      }
+
+
+      /* Make section headings smaller on phones */
+      h2 {
+        font-size: 35px;
+      }
+
+
+      /* Slightly reduce the hero height on phones */
+      .hero {
+        min-height: 75vh;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<!-- ========================================================= -->
+<!-- ======================= WEBSITE ========================== -->
+<!-- ========================================================= -->
+
+<body>
+
+
+  <!-- ======================================================= -->
+  <!-- NAVIGATION                                               -->
+  <!-- ======================================================= -->
+
+  <nav>
+
+    <!-- Kyerman brand name -->
+    <div class="logo">
+      KYERMAN BY KOBA
+    </div>
+
+
+    <!-- Main navigation links -->
+    <div>
+
+      <!-- Link to the About section -->
+      <a href="#about">About</a>
+
+      <!-- Link to the Process section -->
+      <a href="#process">Process</a>
+
+      <!-- Link to the Inquiry section -->
+      <a href="#contact">Inquire</a>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- ======================================================= -->
+  <!-- MAIN WEBSITE CONTENT                                     -->
+  <!-- ======================================================= -->
+
+  <main>
+
+
+    <!-- ===================================================== -->
+    <!-- HERO SECTION                                           -->
+    <!-- ===================================================== -->
+
+    <section class="hero">
+
+      <!-- Container for the hero text -->
+      <div>
+
+
+        <!-- Small brand descriptor -->
+        <div class="eyebrow">
+          Handcrafted • Made to Measure
+        </div>
+
+
+        <!-- Main brand statement -->
+        <h1>
+          Tailored<br>
+          to suit you.
+        </h1>
+
+
+        <!-- Hero description -->
+        <p>
+          Handcrafted made-to-measure tailoring shaped around
+          your measurements, your style, and the way you want to show up.
+        </p>
+
+
+        <!-- Main hero button -->
+        <a class="button" href="#contact">
+          Start Your Suit
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- ABOUT SECTION                                          -->
+    <!-- ===================================================== -->
+
+    <section id="about" class="center">
+
+
+      <!-- Small section label -->
+      <div class="eyebrow">
+        Kyerman by Koba
+      </div>
+
+
+      <!-- Main About heading -->
+      <h2>
+        Made for your measure.
+      </h2>
+
+
+      <!-- About paragraph -->
+      <p class="intro-text">
+        Kyerman by Koba creates handcrafted made-to-measure suits
+        for men and women. From the cut and fabric to the final details,
+        every piece is built around the person wearing it.
+      </p>
+
+
+
+      <!-- =================================================== -->
+      <!-- THREE BRAND PRINCIPLE CARDS                         -->
+      <!-- =================================================== -->
+
+      <div class="cards">
+
+
+        <!-- FIT CARD -->
+        <div class="card">
+
+          <div>
+
+            <h3>
+              The Fit
+            </h3>
+
+            <p>
+              Your measurements are the starting point for a silhouette
+              made specifically for you.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- FABRIC CARD -->
+        <div class="card">
+
+          <div>
+
+            <h3>
+              The Fabric
+            </h3>
+
+            <p>
+              Choose the texture, weight and character that fit
+              the occasion and your personal style.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DETAILS CARD -->
+        <div class="card">
+
+          <div>
+
+            <h3>
+              The Details
+            </h3>
+
+            <p>
+              Lapels, buttons, lining and finishing touches
+              bring the finished piece together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- PROCESS SECTION                                        -->
+    <!-- ===================================================== -->
+
+    <section id="process" class="process">
+
+
+      <!-- Process section label -->
+      <div class="eyebrow">
+        The Process
+      </div>
+
+
+      <!-- Process heading -->
+      <h2>
+        From measurement<br>
+        to finished suit.
+      </h2>
+
+
+
+      <!-- =================================================== -->
+      <!-- FOUR PROCESS STEPS                                  -->
+      <!-- =================================================== -->
+
+      <div class="steps">
+
+
+        <!-- STEP 1 -->
+        <div class="step">
+
+          <!-- Step number -->
+          <div class="step-number">
+            01
+          </div>
+
+          <!-- Step title -->
+          <h3>
+            Inquire
+          </h3>
+
+          <!-- Step description -->
+          <p>
+            Tell us what you're looking for, your occasion,
+            and your preferred style.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h3>
+            Measure
+          </h3>
+
+          <p>
+            We guide you through the measurements needed
+            for your custom fit.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3>
+            Customize
+          </h3>
+
+          <p>
+            Select your fabric and design details and
+            refine the look together.
+          </p>
+
+        </div>
+
+
+        <!-- STEP 4 -->
+        <div class="step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <h3>
+            Craft
+          </h3>
+
+          <p>
+            Your suit is handcrafted and prepared for
+            its final fitting and delivery.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- CONTACT / TALLY SECTION                                -->
+    <!-- ===================================================== -->
+
+    <section id="contact" class="contact">
+
+
+      <!-- Contact section label -->
+      <div class="eyebrow">
+        Start Your Suit
+      </div>
+
+
+      <!-- Contact heading -->
+      <h2>
+        Let's make something<br>
+        that fits you.
+      </h2>
+
+
+      <!-- Contact description -->
+      <p>
+        Ready to begin? Submit an inquiry and we'll
+        get back to you with the next steps.
+      </p>
+
+
+      <!-- ================================================= -->
+      <!-- TALLY FORM BUTTON                                  -->
+      <!-- ================================================= -->
+
+      <!--
+        THIS BUTTON WILL EVENTUALLY CONNECT TO YOUR TALLY FORM.
+
+        We will replace the "#" below with your actual Tally URL
+        after the rest of the website is set up.
+      -->
+
+      <a class="button" href="#">
+        Request a Consultation
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ======================================================= -->
+  <!-- FOOTER                                                  -->
+  <!-- ======================================================= -->
+
+  <footer>
+
+
+    <!-- Copyright -->
+    <span>
+      © Kyerman by Koba
+    </span>
+
+
+    <!-- Brand tagline -->
+    <span>
+      Tailored to suit you.
+    </span>
+
+
+  </footer>
+
+
+</body>
+
+</html>
+```
