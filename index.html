@@ -18,440 +18,613 @@
   <!-- ========================================================= -->
   <!-- ======================== CSS ============================= -->
   <!-- ========================================================= -->
+<style>
+  /* ========================================================= */
+/* KYERMAN BY KOBA - MAIN STYLES                             */
+/* ========================================================= */
 
-  <style>
-
-    /* --------------------------------------------------------- */
-    /* GLOBAL RESET                                               */
-    /* --------------------------------------------------------- */
-
-    /* Remove default browser spacing and make sizing predictable */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    /* --------------------------------------------------------- */
-    /* BODY                                                       */
-    /* --------------------------------------------------------- */
-
-    /* Set the overall website background, text color, and spacing */
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f5f0;
-      color: #151515;
-      line-height: 1.6;
-    }
-
-
-    /* --------------------------------------------------------- */
-    /* NAVIGATION                                                  */
-    /* --------------------------------------------------------- */
-
-    /* Create the navigation bar at the top of the website */
-    nav {
-      display: flex;
-
-      /* Put the logo on the left and links on the right */
-      justify-content: space-between;
-
-      /* Vertically center everything */
-      align-items: center;
-
-      /* Add space inside the navigation bar */
-      padding: 24px 6%;
-
-      /* Add a subtle line underneath the navigation */
-      border-bottom: 1px solid #ddd8ce;
-
-      /* Match the main website background */
-      background: #f7f5f0;
-    }
-
-
-    /* Style the Kyerman logo text */
-    .logo {
-      font-size: 17px;
-      letter-spacing: 2px;
-    }
-
-
-    /* Style the navigation links */
-    nav a {
-      color: #151515;
-      text-decoration: none;
-      margin-left: 28px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-    }
-
-
-    /* --------------------------------------------------------- */
-    /* HERO SECTION                                                */
-    /* --------------------------------------------------------- */
-
-    /* Create the large opening section of the website */
-    /* HERO SECTION */
-    .hero {
-        min-height: 85vh;
-    
-        /* Put the text and image side by side */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    
-        /* Space between the text and image */
-        gap: 60px;
-    
-        /* Add breathing room around the hero */
-        padding: 80px 6%;
-    
-        /* Warm neutral background */
-        background: #eee9df;
-    
-        /* Keep the hero from becoming too wide */
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    /* HERO TEXT */
-      .hero-content {
-          flex: 1;
-          max-width: 600px;
-      
-          /* Align the hero text to the left */
-          text-align: left;
-      }
-      
-      
-      /* HERO IMAGE CONTAINER */
-      .hero-image {
-          flex: 1;
-          max-width: 550px;
-      }
-      
-      
-      /* HERO IMAGE */
-      .hero-image img {
-          width: 100%;
-          height: auto;
-      
-          
-          /* Show the entire image */
-          object-fit: contain;
-      
-          /* Keep the corners subtle */
-          border-radius: 2px;
-      
-          /* Remove extra space beneath the image */
-          display: block;
-      }
-
-
-    /* Small uppercase text above the main headline */
-    .eyebrow {
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-
-      /* Muted gold accent */
-      color: #a8874d;
-    }
-
-
-    /* Main homepage headline */
-    h1 {
-      font-size: clamp(55px, 9vw, 110px);
-
-      /* Keep the headline elegant rather than bold */
-      font-weight: 400;
-
-      /* Tighten the spacing between headline lines */
-      line-height: .9;
-
-      /* Add space above and below the headline */
-      margin: 25px 0;
-    }
-
-
-    /* Supporting text underneath the hero headline */
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto 35px;
-      color: #555;
-      font-size: 18px;
-    }
-
-
-    /* Main call-to-action buttons */
-    .button {
-      display: inline-block;
-
-      /* Dark luxury-style button */
-      padding: 15px 28px;
-      background: #151515;
-      color: white;
-
-      /* Remove the default link underline */
-      text-decoration: none;
-
-      /* Use a clean sans-serif font for buttons */
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-
-    /* --------------------------------------------------------- */
-    /* GENERAL SECTIONS                                            */
-    /* --------------------------------------------------------- */
-
-    /* Give each major website section consistent spacing */
-    section {
-      padding: 100px 7%;
-
-      /* Prevent text from becoming too wide */
-      max-width: 1200px;
-
-      /* Center the section */
-      margin: auto;
-    }
-
 
-    /* Utility class for centered text */
-    .center {
-      text-align: center;
-    }
-
+/* --------------------------------------------------------- */
+/* GLOBAL RESET                                               */
+/* --------------------------------------------------------- */
 
-    /* Section headings */
-    h2 {
-      font-size: 44px;
-      font-weight: 400;
-      margin: 15px 0 25px;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
-    /* Supporting paragraph used in the introduction section */
-    .intro-text {
-      max-width: 720px;
-      margin: auto;
-      color: #666;
-      font-size: 17px;
-    }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f7f5f0;
+  color: #151515;
+  line-height: 1.6;
+}
 
 
-    /* --------------------------------------------------------- */
-    /* INTRODUCTION CARDS                                          */
-    /* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* NAVIGATION                                                  */
+/* --------------------------------------------------------- */
 
-    /* Create three columns for the Fit, Fabric, and Details cards */
-    .cards {
-      display: grid;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-      /* Three equal-width columns */
-      grid-template-columns: repeat(3, 1fr);
+  padding: 24px 6%;
 
-      /* Space between the cards */
-      gap: 20px;
+  background: #f7f5f0;
+  border-bottom: 1px solid #ddd8ce;
 
-      /* Space between the paragraph and cards */
-      margin-top: 55px;
-    }
+  position: relative;
+  z-index: 10;
+}
 
+.logo {
+  font-size: 17px;
+  letter-spacing: 2.5px;
+  white-space: nowrap;
+}
 
-    /* Individual card styling */
-    .card {
-      min-height: 320px;
+nav a {
+  color: #151515;
+  text-decoration: none;
 
-      /* Put the text near the bottom of the card */
-      padding: 30px;
-      display: flex;
-      align-items: flex-end;
+  margin-left: 30px;
 
-      /* Neutral fabric-inspired color */
-      background: #ded7ca;
-    }
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
+  transition: opacity 0.2s ease;
+}
 
-    /* Slightly change the background of the second card */
-    .card:nth-child(2) {
-      background: #d3cec3;
-    }
+nav a:hover {
+  opacity: 0.55;
+}
 
 
-    /* Slightly change the background of the third card */
-    .card:nth-child(3) {
-      background: #e8e3da;
-    }
+/* --------------------------------------------------------- */
+/* HERO SECTION                                                */
+/* --------------------------------------------------------- */
 
+.hero {
+  min-height: 82vh;
 
-    /* Card heading */
-    .card h3 {
-      font-size: 27px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  gap: 70px;
 
-    /* Card description */
-    .card p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #555;
-    }
+  padding: 90px 6%;
 
+  background: #eee9df;
 
-    /* --------------------------------------------------------- */
-    /* PROCESS SECTION                                             */
-    /* --------------------------------------------------------- */
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-    /* Create the dark section containing the four-step process */
-    .process {
-      max-width: none;
+.hero-content {
+  flex: 1;
+  max-width: 600px;
 
-      /* Luxury black background */
-      background: #151515;
+  text-align: left;
+}
 
-      /* White text against the dark background */
-      color: white;
-    }
+.hero-image {
+  flex: 1;
+  max-width: 550px;
+}
 
+.hero-image img {
+  width: 100%;
+  height: auto;
 
-    /* Arrange the four process steps horizontally */
-    .steps {
-      max-width: 1200px;
-      margin: 55px auto 0;
+  display: block;
 
-      display: grid;
+  object-fit: contain;
 
-      /* Four equal columns */
-      grid-template-columns: repeat(4, 1fr);
+  border-radius: 2px;
+}
 
-      /* Space between each step */
-      gap: 35px;
-    }
 
+/* --------------------------------------------------------- */
+/* TYPOGRAPHY                                                  */
+/* --------------------------------------------------------- */
 
-    /* Small gold number above each process step */
-    .step-number {
-      color: #b99a5a;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-    }
+.eyebrow {
+  font-family: Arial, sans-serif;
 
+  font-size: 10px;
+  letter-spacing: 4px;
 
-    /* Process step heading */
-    .step h3 {
-      font-size: 23px;
-      font-weight: 400;
-      margin: 12px 0;
-    }
+  text-transform: uppercase;
 
+  color: #a8874d;
+}
 
-    /* Process step description */
-    .step p {
-      color: #bbb;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
+h1 {
+  font-size: clamp(58px, 8vw, 108px);
 
+  font-weight: 400;
 
-    /* --------------------------------------------------------- */
-    /* CONTACT / INQUIRY SECTION                                   */
-    /* --------------------------------------------------------- */
+  line-height: 0.88;
 
-    /* Create the final call-to-action section */
-    .contact {
-      max-width: none;
+  letter-spacing: -3px;
 
-      /* Center all contact content */
-      text-align: center;
+  margin: 28px 0;
+}
 
-      /* Use the same warm neutral as the hero */
-      background: #eee9df;
-    }
+.hero p {
+  max-width: 500px;
 
+  margin: 0 0 35px;
 
-    /* Contact section supporting text */
-    .contact p {
-      color: #666;
-      margin-bottom: 30px;
-    }
+  color: #555;
 
+  font-size: 17px;
+}
 
-    /* --------------------------------------------------------- */
-    /* FOOTER                                                      */
-    /* --------------------------------------------------------- */
+h2 {
+  font-size: clamp(38px, 5vw, 58px);
 
-    /* Create the bottom footer */
-    footer {
-      padding: 30px 7%;
+  font-weight: 400;
 
-      /* Put copyright on the left and tagline on the right */
-      display: flex;
-      justify-content: space-between;
+  line-height: 1;
 
-      /* Small clean footer typography */
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #777;
-    }
+  letter-spacing: -1px;
 
+  margin: 18px 0 28px;
+}
 
-    /* --------------------------------------------------------- */
-    /* MOBILE RESPONSIVE DESIGN                                    */
-    /* --------------------------------------------------------- */
 
-    /* These styles activate on smaller screens */
-    @media (max-width: 750px) {
+/* --------------------------------------------------------- */
+/* BUTTONS                                                     */
+/* --------------------------------------------------------- */
 
-      /* Reduce navigation spacing on phones */
-      nav {
-        padding: 20px;
-      }
+.button {
+  display: inline-block;
 
+  padding: 16px 30px;
 
-      /* Make navigation links smaller on phones */
-      nav a {
-        margin-left: 12px;
-        font-size: 11px;
-      }
+  background: #151515;
+  color: white;
 
+  text-decoration: none;
 
-      /* Stack the cards vertically instead of horizontally */
-      .cards,
-      .steps {
-        grid-template-columns: 1fr;
-      }
+  font-family: Arial, sans-serif;
 
+  font-size: 11px;
+  letter-spacing: 1.8px;
 
-      /* Reduce section spacing on smaller screens */
-      section {
-        padding: 70px 6%;
-      }
+  text-transform: uppercase;
 
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
 
-      /* Make section headings smaller on phones */
-      h2 {
-        font-size: 35px;
-      }
+.button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
 
 
-      /* Slightly reduce the hero height on phones */
-      .hero {
-        min-height: auto;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 40px;
-      }
+/* --------------------------------------------------------- */
+/* GENERAL SECTIONS                                            */
+/* --------------------------------------------------------- */
 
-    }
+section {
+  padding: 110px 7%;
+
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: #666;
+
+  font-size: 17px;
+}
+
+
+/* --------------------------------------------------------- */
+/* ABOUT / BRAND PRINCIPLES                                    */
+/* --------------------------------------------------------- */
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-top: 65px;
+}
+
+.card {
+  min-height: 330px;
+
+  padding: 32px;
+
+  display: flex;
+  align-items: flex-end;
+
+  background: #ded7ca;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:nth-child(2) {
+  background: #d3cec3;
+}
+
+.card:nth-child(3) {
+  background: #e8e3da;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+}
+
+.card h3 {
+  font-size: 28px;
+
+  font-weight: 400;
+
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #555;
+}
+
+
+/* --------------------------------------------------------- */
+/* PROCESS SECTION                                             */
+/* --------------------------------------------------------- */
+
+.process {
+  max-width: none;
+
+  background: #151515;
+
+  color: white;
+
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.steps {
+  max-width: 1200px;
+
+  margin: 65px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 45px;
+}
+
+.step {
+  position: relative;
+}
+
+.step-number {
+  color: #b99a5a;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.step h3 {
+  font-size: 24px;
+
+  font-weight: 400;
+
+  margin: 14px 0 12px;
+}
+
+.step p {
+  color: #aaa;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------- */
+/* CONTACT / INQUIRY                                          */
+/* --------------------------------------------------------- */
+
+.contact {
+  max-width: none;
+
+  text-align: center;
+
+  background: #eee9df;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.contact p {
+  max-width: 500px;
+
+  margin: 0 auto 35px;
+
+  color: #666;
+
+  font-size: 16px;
+}
+
+
+/* --------------------------------------------------------- */
+/* FOOTER                                                      */
+/* --------------------------------------------------------- */
+
+footer {
+  padding: 30px 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #f7f5f0;
+
+  border-top: 1px solid #ddd8ce;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.5px;
+
+  color: #777;
+}
+
+
+/* --------------------------------------------------------- */
+/* MOBILE RESPONSIVE DESIGN                                    */
+/* --------------------------------------------------------- */
+
+@media (max-width: 750px) {
+
+  /* NAVIGATION */
+
+  nav {
+    padding: 20px 6%;
+
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    margin-left: 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: auto;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 45px;
+
+    padding: 65px 7% 75px;
+  }
+
+  .hero-content {
+    max-width: none;
+
+    text-align: left;
+  }
+
+  .hero-image {
+    max-width: none;
+
+    width: 100%;
+  }
+
+  .hero-image img {
+    width: 100%;
+
+    height: auto;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  h1 {
+    font-size: 58px;
+
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
+    margin: 22px 0;
+  }
+
+  .hero p {
+    font-size: 15px;
+
+    max-width: 380px;
+
+    margin-bottom: 30px;
+  }
+
+
+  /* GENERAL SECTIONS */
+
+  section {
+    padding: 80px 7%;
+  }
+
+  h2 {
+    font-size: 38px;
+
+    line-height: 1.02;
+  }
+
+  .intro-text {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* CARDS */
+
+  .cards {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 45px;
+  }
+
+  .card {
+    min-height: 260px;
+
+    padding: 28px;
+  }
+
+  .card h3 {
+    font-size: 26px;
+  }
+
+
+  /* PROCESS */
+
+  .process {
+    padding: 80px 7%;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-top: 50px;
+  }
+
+  .step h3 {
+    font-size: 23px;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    padding: 85px 7%;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 25px 7%;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: center;
+  }
+}
+
+
+/* --------------------------------------------------------- */
+/* EXTRA SMALL PHONES                                         */
+/* --------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+  nav {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 12px;
+  }
+
+  nav a {
+    margin-left: 8px;
+
+    font-size: 8px;
+  }
+
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  h1 {
+    font-size: 51px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .button {
+    width: 100%;
+
+    text-align: center;
+  }
+}
 
   </style>
 
@@ -826,4 +999,3 @@
 </body>
 
 </html>
-```
