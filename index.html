@@ -94,25 +94,60 @@
     /* --------------------------------------------------------- */
 
     /* Create the large opening section of the website */
+    /* HERO SECTION */
     .hero {
-      min-height: 85vh;
-
-      /* Center the hero content vertically */
-      display: flex;
-      align-items: center;
-
-      /* Center the hero content horizontally */
-      justify-content: center;
-
-      /* Center the text */
-      text-align: center;
-
-      /* Add breathing room around the content */
-      padding: 80px 6%;
-
-      /* Warm neutral background */
-      background: #eee9df;
+        min-height: 85vh;
+    
+        /* Put the text and image side by side */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        /* Space between the text and image */
+        gap: 60px;
+    
+        /* Add breathing room around the hero */
+        padding: 80px 6%;
+    
+        /* Warm neutral background */
+        background: #eee9df;
+    
+        /* Keep the hero from becoming too wide */
+        max-width: 1400px;
+        margin: 0 auto;
     }
+
+    /* HERO TEXT */
+      .hero-content {
+          flex: 1;
+          max-width: 600px;
+      
+          /* Align the hero text to the left */
+          text-align: left;
+      }
+      
+      
+      /* HERO IMAGE CONTAINER */
+      .hero-image {
+          flex: 1;
+          max-width: 550px;
+      }
+      
+      
+      /* HERO IMAGE */
+      .hero-image img {
+          width: 100%;
+          height: 650px;
+      
+          /* Crop the image cleanly */
+          object-fit: cover;
+      
+          /* Keep the corners subtle */
+          border-radius: 2px;
+      
+          /* Remove extra space beneath the image */
+          display: block;
+      }
 
 
     /* Small uppercase text above the main headline */
