@@ -87,7 +87,57 @@ nav a {
 nav a:hover {
   opacity: 0.55;
 }
+/* GALLERY NAVIGATION DROPDOWN */
 
+.gallery-nav {
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-nav > a {
+  display: inline-block;
+}
+
+.gallery-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  min-width: 170px;
+
+  padding: 10px 0;
+
+  background: #f7f5f0;
+  border: 1px solid #ddd8ce;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.gallery-dropdown a {
+  display: block;
+
+  margin: 0;
+
+  padding: 10px 18px;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.gallery-nav:hover .gallery-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
 /* --------------------------------------------------------- */
 /* HERO SECTION                                                */
@@ -445,6 +495,10 @@ section {
   font-size: 12px;
 
   letter-spacing: 0.5px;
+}
+  .gallery-more {
+  text-align: center;
+  margin-top: 45px;
 }
 /* --------------------------------------------------------- */
 /* PROCESS SECTION                                             */
@@ -810,7 +864,14 @@ footer {
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#process">Process</a>
-      <a href="#gallery">Gallery</a>
+      <div class="gallery-nav">
+        <a href="#gallery">Gallery</a>
+
+        <div class="gallery-dropdown">
+          <a href="#gallery">Selected Work</a>
+          <a href="gallery.html">Full Gallery</a>
+        </div>
+    </div>
       <a href="#contact">Inquire</a>
     </div>
   </nav>
@@ -971,6 +1032,13 @@ footer {
 
     </div>
 
+  </div>
+
+  <!-- Link to the full gallery page -->
+   <div class="gallery-more">
+    <a href="gallery.html" class="button">
+      View Full Gallery
+    </a>
   </div>
 
 </section>
