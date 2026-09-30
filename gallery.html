@@ -1,1 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery | Kyerman by Koba</title>
+
+  <style>
+
+    /* ========================================================= */
+    /* GLOBAL                                                     */
+    /* ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f5f0;
+      color: #151515;
+      line-height: 1.6;
+    }
+
+
+    /* ========================================================= */
+    /* NAVIGATION                                                  */
+    /* ========================================================= */
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 24px 6%;
+
+      background: #f7f5f0;
+      border-bottom: 1px solid #ddd8ce;
+
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 17px;
+      letter-spacing: 2.5px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #151515;
+      text-decoration: none;
+
+      margin-left: 30px;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.55;
+    }
+
+
+    /* ========================================================= */
+    /* GALLERY HEADER                                              */
+    /* ========================================================= */
+
+    .gallery-header {
+      max-width: 1200px;
+      margin: auto;
+
+      padding: 110px 7% 70px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+
+      font-size: 10px;
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #a8874d;
+    }
+
+    h1 {
+      font-size: clamp(55px, 8vw, 100px);
+
+      font-weight: 400;
+
+      line-height: 0.9;
+
+      letter-spacing: -3px;
+
+      margin: 25px 0;
+    }
+
+    .gallery-intro {
+      max-width: 600px;
+
+      color: #666;
+
+      font-size: 17px;
+    }
+
+
+    /* ========================================================= */
+    /* GALLERY GRID                                                */
+    /* ========================================================= */
+
+    .gallery-container {
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding: 0 7% 120px;
+    }
+
+    .gallery-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+
+      overflow: hidden;
+
+      background: #e5dfd5;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 520px;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.025);
+    }
+
+    .gallery-item.featured {
+      grid-column: span 2;
+    }
+
+    .gallery-item.featured img {
+      height: 650px;
+    }
+
+    .gallery-caption {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 24px 28px;
+
+      background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.72)
+      );
+
+      color: white;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .gallery-caption span {
+      opacity: 0.7;
+    }
+
+
+    /* ========================================================= */
+    /* BACK TO HOME                                                */
+    /* ========================================================= */
+
+    .gallery-footer {
+      text-align: center;
+
+      padding: 0 7% 120px;
+    }
+
+    .button {
+      display: inline-block;
+
+      padding: 16px 30px;
+
+      background: #151515;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .button:hover {
+      background: #333;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ========================================================= */
+    /* FOOTER                                                      */
+    /* ========================================================= */
+
+    footer {
+      padding: 30px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      background: #f7f5f0;
+
+      border-top: 1px solid #ddd8ce;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 0.5px;
+
+      color: #777;
+    }
+
+
+    /* ========================================================= */
+    /* MOBILE                                                      */
+    /* ========================================================= */
+
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 20px 6%;
+
+        align-items: flex-start;
+      }
+
+      .logo {
+        font-size: 14px;
+
+        letter-spacing: 2px;
+      }
+
+      nav a {
+        margin-left: 12px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.8px;
+      }
+
+      .gallery-header {
+        padding: 75px 7% 50px;
+      }
+
+      h1 {
+        font-size: 58px;
+
+        letter-spacing: -2px;
+      }
+
+      .gallery-intro {
+        font-size: 15px;
+      }
+
+      .gallery-container {
+        padding: 0 7% 80px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+      }
+
+      .gallery-item.featured {
+        grid-column: auto;
+      }
+
+      .gallery-item img,
+      .gallery-item.featured img {
+        height: 420px;
+      }
+
+      .gallery-caption {
+        padding: 18px 20px;
+      }
+
+      .gallery-footer {
+        padding-bottom: 85px;
+      }
+
+      footer {
+        padding: 25px 7%;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+      }
+    }
+
+
+    /* ========================================================= */
+    /* SMALL PHONES                                                */
+    /* ========================================================= */
+
+    @media (max-width: 420px) {
+
+      nav {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 12px;
+      }
+
+      nav a {
+        margin-left: 8px;
+
+        font-size: 8px;
+      }
+
+      h1 {
+        font-size: 51px;
+      }
+
+      .gallery-item img,
+      .gallery-item.featured img {
+        height: 360px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ========================================================= -->
+
+  <!-- NAVIGATION                                                  -->
+
+  <!-- ========================================================= -->
+
+  <nav>
+
+```
+<div class="logo">
+  KYERMAN BY KOBA
+</div>
+
+<div class="nav-links">
+
+  <a href="index.html#about">
+    About
+  </a>
+
+  <a href="index.html#process">
+    Process
+  </a>
+
+  <a href="gallery.html">
+    Gallery
+  </a>
+
+  <a href="index.html#contact">
+    Inquire
+  </a>
+
+</div>
+```
+
+  </nav>
+
+  <!-- ========================================================= -->
+
+  <!-- GALLERY HEADER                                              -->
+
+  <!-- ========================================================= -->
+
+  <header class="gallery-header">
+
+```
+<p class="eyebrow">
+  Kyerman by Koba
+</p>
+
+<h1>
+  The Gallery.
+</h1>
+
+<p class="gallery-intro">
+  A collection of made-to-measure pieces, details, and moments
+  from the Kyerman by Koba process.
+</p>
+```
+
+  </header>
+
+  <!-- ========================================================= -->
+
+  <!-- GALLERY                                                     -->
+
+  <!-- ========================================================= -->
+
+  <main class="gallery-container">
+
+```
+<div class="gallery-grid">
+
+
+  <!-- FEATURED PHOTO -->
+
+  <div class="gallery-item featured">
+
+    <img
+      src="hero.jpg"
+      alt="Kyerman by Koba tailored suit"
+    >
+
+    <div class="gallery-caption">
+
+      <span>
+        01
+      </span>
+
+      <span>
+        Made to Measure
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- SECOND PHOTO -->
+
+  <div class="gallery-item">
+
+    <img
+      src="images/suit-2.jpeg"
+      alt="Kyerman by Koba tailored suit"
+    >
+
+    <div class="gallery-caption">
+
+      <span>
+        02
+      </span>
+
+      <span>
+        Tailoring
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- THIRD PHOTO -->
+
+  <div class="gallery-item">
+
+    <img
+      src="images/suit-3.jpeg"
+      alt="Kyerman by Koba tailored suit"
+    >
+
+    <div class="gallery-caption">
+
+      <span>
+        03
+      </span>
+
+      <span>
+        The Details
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOURTH PHOTO -->
+
+  <div class="gallery-item">
+
+    <img
+      src="images/suit-4.jpeg"
+      alt="Kyerman by Koba tailored suit"
+    >
+
+    <div class="gallery-caption">
+
+      <span>
+        04
+      </span>
+
+      <span>
+        Custom Tailoring
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- FIFTH PHOTO -->
+
+  <div class="gallery-item">
+
+    <img
+      src="images/suit-5.jpeg"
+      alt="Kyerman by Koba tailored suit"
+    >
+
+    <div class="gallery-caption">
+
+      <span>
+        05
+      </span>
+
+      <span>
+        Made for You
+      </span>
+
+    </div>
+
+  </div>
+
+
+</div>
+```
+
+  </main>
+
+  <!-- ========================================================= -->
+
+  <!-- RETURN TO HOME                                              -->
+
+  <!-- ========================================================= -->
+
+  <div class="gallery-footer">
+
+```
+<a
+  href="index.html"
+  class="button"
+>
+  Back to Kyerman
+</a>
+```
+
+  </div>
+
+  <!-- ========================================================= -->
+
+  <!-- FOOTER                                                      -->
+
+  <!-- ========================================================= -->
+
+  <footer>
+
+```
+<span>
+  © 2026 Kyerman by Koba
+</span>
+
+<span>
+  Tailored to suit you.
+</span>
+```
+
+  </footer>
+
+</body>
+
+</html>
 
