@@ -65,9 +65,22 @@ nav {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   font-size: 17px;
   letter-spacing: 2.5px;
   white-space: nowrap;
+}
+
+.logo img {
+  width: 28px;
+  height: 28px;
+
+  object-fit: contain;
+
+  display: block;
 }
 
 .nav-links {
@@ -646,8 +659,12 @@ nav {
 
 .logo {
   font-size: 14px;
-
   letter-spacing: 2px;
+}
+
+.logo img {
+  width: 24px;
+  height: 24px;
 }
 
 .nav-links {
@@ -849,6 +866,11 @@ nav a {
   font-size: 12px;
 }
 
+.logo img {
+  width: 21px;
+  height: 21px;
+}
+
 .nav-links {
   gap: 8px;
 }
@@ -894,7 +916,10 @@ nav a {
 
   
 <nav>
-  <div class="logo">KYERMAN BY KOBA</div>
+  <div class="logo">
+    <img src="images/logo.png" alt="Kyerman by Koba logo">
+    <span>KYERMAN BY KOBA</span>
+  </div>
 
   <div class="nav-links">
     <a href="#about">About</a>
