@@ -336,19 +336,35 @@ section {
 }
 
 .card {
-  min-height: 330px;
+  min-height: 430px;
 
-  padding: 32px;
+  padding: 0;
 
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
 
   background: #ded7ca;
+
+  overflow: hidden;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
+.card img {
+  width: 100%;
+  height: 230px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 28px 32px 32px;
+}
+
+
 
 .card:nth-child(2) {
   background: #d3cec3;
