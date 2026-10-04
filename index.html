@@ -653,8 +653,9 @@ footer {
 
 nav {
   padding: 20px 6%;
-
+  flex-direction: column;
   align-items: flex-start;
+  gap: 18px;
 }
 
 .logo {
@@ -665,14 +666,20 @@ nav {
 .logo img {
   width: 24px;
   height: 24px;
+
+  obeject-fit: cover;
+  border-radius: 50%;
 }
 
 .nav-links {
-  gap: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: cneter;
+  gap: 10px;
+  flex-wrap: nowrap;
 
-  flex-wrap: wrap;
-
-  justify-content: flex-end;
+  
 }
 
 nav a {
@@ -872,11 +879,14 @@ nav a {
 }
 
 .nav-links {
-  gap: 8px;
+  width: 100%;
+  gap: 5px;
+  justify-content: space-between;
 }
 
 nav a {
-  font-size: 8px;
+  font-size: 7.5px;
+  letter-spaceing: 0.5px;
 }
 
   .hero {
