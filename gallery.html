@@ -53,17 +53,17 @@
     }
 
     .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-  font-size: 17px;
-  letter-spacing: 2.5px;
-  white-space: nowrap;
+      font-size: 17px;
+      letter-spacing: 2.5px;
+      white-space: nowrap;
 
-  color: #151515;
-  text-decoration: none;
-}
+      color: #151515;
+      text-decoration: none;
+  }
 
 .logo img {
   width: 28px;
@@ -302,14 +302,40 @@
 
       nav {
         padding: 20px 6%;
-
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
       }
 
       .logo {
+        width: 100%;
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        gap: 10px;
+      
         font-size: 14px;
-
         letter-spacing: 2px;
+      
+        text-align: center;
+      }
+      .logo img {
+        width: 24px;
+        height: 24px;
+      
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .nav-links {
+        width: 100%;
+      
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      
+        gap: 10px;
       }
 
       nav a {
@@ -417,9 +443,13 @@
 
   <nav>
 
-<div class="logo">
-  KYERMAN BY KOBA
-</div>
+<a href="index.html" class="logo">
+  <img
+    src="images/KyermanSymbol.png"
+    alt="Kyerman by Koba logo"
+  >
+  <span>KYERMAN BY KOBA</span>
+</a>
 
 <div class="nav-links">
 
@@ -482,7 +512,7 @@
   <div class="gallery-item featured">
 
     <img
-      src="hero.jpg"
+      src="images/hero.jpg"
       alt="Kyerman by Koba tailored suit"
     >
 
